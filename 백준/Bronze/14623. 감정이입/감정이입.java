@@ -3,25 +3,23 @@ import java.io.InputStreamReader;
 
 public class Main {
     public static void main(String[] args) {
-        try {
+        try{
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             String binaryA = br.readLine();
             String binaryB = br.readLine();
-
-      
             long decimalNumberA = Long.parseLong(binaryA, 2);
             long decimalNumberB = Long.parseLong(binaryB, 2);
-
-          
-            long resultDecimal = decimalNumberA * decimalNumberB;
-
-  
-            String resultBinary = Long.toBinaryString(resultDecimal);
-
-        
-            System.out.println(resultBinary);
-        } catch (Exception e) {
+            culcu(decimalNumberA,decimalNumberB);
+        }
+        catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    public static void culcu(long a,long b) {
+        long n = a*b;
+        String decimalN= Long.toBinaryString(n);
+        System.out.print(decimalN);
+
     }
 }
