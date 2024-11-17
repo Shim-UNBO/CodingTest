@@ -1,0 +1,31 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+
+public class Main {
+    public static void main(String[] args) {
+        try{
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+            int n = Integer.parseInt(br.readLine());
+            Long sum = 1L;
+            if (n == 0 || n == 1){
+                bw.write(1+"");
+            }
+            else{
+                for (int i=1; i<=n; i++){
+                    sum *= i;
+                }
+                bw.write(sum+"");
+            }
+            bw.flush();
+            bw.close();
+            br.close();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+}
